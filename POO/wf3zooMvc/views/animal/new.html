@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Voici l'animal créé:</h1>
+<ul>
+    <li>Son espèce est: {{species}}</li>
+    <li>Il est dans le pays suivant : {{country}} </li>
+</ul>
+<img src="assets\img\{{animal.photo}}" alt="image de l'animal {{animal.species}}" style="height:50px; width:50px">
+
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

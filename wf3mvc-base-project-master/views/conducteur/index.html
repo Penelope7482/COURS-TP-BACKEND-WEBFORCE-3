@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Liste des Conducteurs</h1>
+<table>
+    <tr>
+        <td>
+            <div class="alert alert-secondary">
+                id_conducteur
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                prenom
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                nom
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                modification
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                suppression
+            </div>
+        </td>
+    </tr>
+    {% for conducteur in conducteurs %}
+    <tr>
+        <td>
+            <div class="alert alert-secondary"> {{ conducteur.id_conducteur }}
+            </div>
+        </td>
+        <td>
+
+            <div class="alert alert-secondary">{{ conducteur.prenom }}
+            </div>
+
+        </td>
+        <td>
+            <div class="alert alert-secondary"> {{ conducteur.nom }}
+            </div>
+        </td>
+
+        <td>
+            <a href="{{ base_path ~ '/conducteur/' ~ conducteur.id_conducteur ~ '/edit' }}">
+                <input name="" id="" class="btn btn-primary" type="button" value="Modifier le conducteur">
+            </a>
+        </td>
+        <td>
+            <a href="{{ base_path ~ '/conducteur/' ~ conducteur.id_conducteur}}">
+                <input name="" id="" class="btn btn-primary" type="button" value="Supprimer un conducteur">
+            </a>
+        </td>
+        {% endfor %}
+    </tr>
+    <hr>
+</table>
+<br>
+<br>
+<form action="{{ base_path ~ '/conducteur' }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="prenom">Prénom du conducteur</label>
+        <input type="text" class="form-control" name="prenom" id="prenom" aria-describedby="helpId"
+            placeholder="Prénom du conducteur" required>
+       
+        <label for="nom">Nom du conducteur</label>
+        <input type="text" class="form-control" name="nom" id="nom" aria-describedby="helpId"
+            placeholder="Nom du conducteur" required>
+      
+      
+
+<!--    <label for="photo">Télécharger une photo </label>
+        <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1">
+-->
+        <input type="submit" value="Ajouter le conducteur">
+    </div>
+</form>
+</div>
+
+</div>
+
+<a href="{{ base_path ~ '/' }}">
+    <input name="" id="" class="btn btn-primary" type="button" value="Retour à l'accueil">
+</a>
+
+
+<!--   <img src="{{ public ~ '/assets/img/' ~ condcuteur.photo}}" alt="photo du conducteur {{conducteur.nom}}" style="height:70px; width:70px">
+-->
+{% endblock %}

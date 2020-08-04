@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{{ base_path ~ '/zoo' }}" method="post">
+    <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Zoo de la bébête qui monte">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <label for="city">Ville</label>
+        <input type="text" class="form-control" name="city" id="city" aria-describedby="helpId" placeholder="Ville Lumière">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <input type="submit" value="Enregistrer">
+    </div>
+</form>
+</div>
+</div>
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Liste des Véhicules</h1>
+<table>
+    <tr>
+        <td>
+            <div class="alert alert-secondary">
+                id_vehicule
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                marque
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                modele
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                couleur
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                immatriculation
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                modification
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                suppression
+            </div>
+        </td>
+    </tr>
+    {% for vehicule in vehicules %}
+    <tr>
+        <td>
+            <div class="alert alert-secondary"> {{ vehicule.id_vehicule }}
+            </div>
+        </td>
+        <td>
+
+            <div class="alert alert-secondary">{{ vehicule.marque }}
+            </div>
+
+        </td>
+        <td>
+            <div class="alert alert-secondary"> {{ vehicule.modele }}
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary"> {{ vehicule.couleur }}
+            </div>
+        </td>
+
+        <td>
+            <div class="alert alert-secondary"> {{ vehicule.immatriculation }}
+            </div>
+        </td>
+        <td>
+            <a href="{{ base_path ~ '/vehicule/' ~ vehicule.id_vehicule ~ '/edit' }}">
+                <input name="" id="" class="btn btn-primary" type="button" value="Modifier le véhicule">
+            </a>
+        </td>
+        <td>
+            <a href="{{ base_path ~ '/vehicule/' ~ vehicule.id_vehicule }}">
+                <input name="" id="" class="btn btn-primary" type="button" value="Supprimer un véhicule">
+            </a>
+        </td>
+        {% endfor %}
+</tr>
+    <hr>
+</table>
+<br>
+<br>
+
+
+<form action="{{ base_path ~ '/vehicule' }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="marque">Marque du véhicule</label>
+        <input type="text" class="form-control" name="marque" id="marque" aria-describedby="helpId"
+            placeholder="Marque du véhicule" required>
+       
+        <label for="modele">Modèle du véhicule</label>
+        <input type="text" class="form-control" name="modele" id="modele" aria-describedby="helpId"
+            placeholder="Modèle du véhicule" required>
+      
+        <label for="couleur">Couleur du véhicule</label>
+        <input type="text" class="form-control" name="couleur" id="couleur" aria-describedby="helpId"
+            placeholder="Couleur du véhicule" required>
+    
+        <label for="immatriculation">Immatriculation du véhicule</label>
+        <input type="text" class="form-control" name="immatriculation" id="immatriculation" aria-describedby="helpId"
+            placeholder="Immatriculation du véhicule" required>
+       
+
+
+<!--    <label for="photo">Télécharger une photo </label>
+        <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1">
+-->
+        <input type="submit" value="Ajouter le véhicule">
+    </div>
+</form>
+</div>
+
+</div>
+        
+        <a href="{{ base_path ~ '/' }}">
+            <input name="" id="" class="btn btn-primary" type="button" value="Retour à l'accueil">
+        </a>
+
+    
+<!--   <img src="{{ public ~ '/assets/img/' ~ vehicule.photo}}" alt="image de l'animal {{vehicule.modele}}" style="height:70px; width:70px">
+-->
+{% endblock %}
+

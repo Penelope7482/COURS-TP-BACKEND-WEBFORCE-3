@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bienvenue sur la liste des animaux.</h1>
+
+{% for animal in animaux %}
+<a href="{{ base_path ~ '/animal/' ~ animal.id_animal }}"><div class="alert alert-secondary">{{ animal.species }} (origine: {{ animal.country }})
+    <img src="{{ base_path ~ '/assets/img/' ~ animal.photo}}" alt="image de l'animal {{animal.species}}" style="height:70px; width:70px">
+</div>
+</a>
+
+{% endfor %}
+
+<a href="{{ base_path ~ '/animal/create' }}"><input name="" id="" class="btn btn-primary" type="button" value="Ajouter des animaux">
+</a>
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %}

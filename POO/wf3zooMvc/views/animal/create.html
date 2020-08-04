@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{{ base_path ~ '/animal' }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="species">Espèce</label>
+        <input type="text" class="form-control" name="species" id="species" aria-describedby="helpId" placeholder="Drôle de bestiole">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <label for="country">Pays</label>
+        <input type="text" class="form-control" name="country" id="country" aria-describedby="helpId" placeholder="Mordor">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <label for="photo">Télécharger une photo </label>
+        <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1">
+ 
+        <input type="submit" value="Enregistrer">
+    </div>
+</form>
+</div>
+
+</div>
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mise à jour du véhicule dont l'id est {{vehicule.id_vehicule}}:</h1>
+
+<form action="{{ base_path ~ '/vehicule/' ~ vehicule.id_vehicule ~ '/edit'}}" method="post"
+    enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="marque">Marque du véhicule</label>
+        <input type="text" class="form-control" name="marque" id="marqueUpdate" aria-describedby="helpId"
+            value={{vehicule.marque}} required>
+
+        <label for="modele">Modèle du véhicule</label>
+        <input type="text" class="form-control" name="modele" id="modeleUpdate" aria-describedby="helpId"
+            value={{vehicule.modele}} required>
+
+        <label for="couleur">Couleur du véhicule</label>
+        <input type="text" class="form-control" name="couleur" id="couleurUpdate" aria-describedby="helpId"
+            value={{vehicule.couleur}} required>
+
+        <label for="immatriculation">Immatriculation du véhicule</label>
+        <input type="text" class="form-control" name="immatriculation" id="immatriculationUpdate" aria-describedby="helpId"
+            value={{vehicule.immatriculation}} required>
+
+        <input type="submit" value="Mettre à jour">
+
+        <!--  <label for="photo"> Télécharger une photo </label>
+       <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1" value={{vehicule.photo}}>
+        
+   -->
+
+    </div>
+</form>
+</div>
+
+</div>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %}

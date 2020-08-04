@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mise à jour de la fiche Animal dont l'id est {{animal.id_animal}}:</h1>
+
+<form action="{{ base_path ~ '/animal/' ~ animal.id_animal ~ '/edit' }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="species">Espèce</label>
+        <input type="text" class="form-control" name="species" id="speciesUpdate" aria-describedby="helpId" value={{animal.species}}>
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <label for="country">Pays</label>
+        <input type="text" class="form-control" name="country" id="countryUpdate" aria-describedby="helpId" value={{animal.country}}>
+        <small id="helpId" class="form-text text-muted">Help text</small>
+
+        <label for="photo"> Télécharger une photo </label>
+        <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1" value={{animal.photo}}>
+        <input type="submit" value="Enregistrer">
+    </div>
+</form>
+</div>
+
+</div>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %} 

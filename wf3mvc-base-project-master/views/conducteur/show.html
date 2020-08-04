@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Etes vous sûr de vouloir supprimer ce conducteur ?</h1>
+
+<!--<img src="..\assets\img\{{conducteur.photo}}" alt="image du conducteur {{conducteur.prenom}}{{conducteur.nom}}" style="height:250px; width:250px; margin: 50px">
+-->
+<ul>
+    <li>Prénom: {{conducteur.prenom}}</li>
+    <li>Nom: {{conducteur.nom}}</li>
+</ul> 
+
+<a href="{{ base_path ~ '/conducteur/' ~ conducteur.id_conducteur ~ '/delete' }}"><input name="" id="" class="btn btn-primary" type="button" value="Supprimer">
+</a>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %}

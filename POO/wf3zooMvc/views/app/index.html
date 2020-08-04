@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bienvenue sur la page d'accueil</h1>
+<a href="{{ base_path ~ '/animal' }}"><input name="" id="" class="btn btn-primary" type="button" value="Voir la liste des animaux">
+</a>
+
+<a href="{{ base_path ~ '/animal/create' }}"><input name="" id="" class="btn btn-primary" type="button" value="Ajouter des animaux">
+</a>
+<a href="{{ base_path ~ '/zoo' }}"><input name="" id="" class="btn btn-primary" type="button" value="Voir la liste des zoo">
+</a>
+<a href="{{ base_path ~ '/zoo/create' }}"><input name="" id="" class="btn btn-primary" type="button" value="Ajouter des zoo">
+</a>
+{% endblock %}

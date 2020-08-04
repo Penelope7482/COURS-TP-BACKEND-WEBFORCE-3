@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bienvenue sur la liste des zoos.</h1>
+
+{% for zoo in zoos %}
+<a href="{{ base_path ~ '/zoo/' ~ zoo.id_zoo }}">
+    <div class="alert alert-secondary">{{ zoo.name }} (origine: {{ zoo.city }})</div>
+</a>
+{% endfor %}
+
+<a href="{{ base_path ~ '/zoo/create' }}"><input name="" id="" class="btn btn-primary" type="button" value="Ajouter des zoo">
+</a>
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Formulaire de création d'une fiche d'attribution d'un véhicule à un conducteur</h1>
+<form action="{{ base_path ~ '/associationVehiculeConducteur' }}" method="post" >
+    <div class="form-group">
+        <label for="idVehicule">Id du véhicule</label>
+        <input type="number" class="form-control" name="id_vehicule" id="idVehicule" aria-describedby="helpId"
+            placeholder="Id du véhicule" required>
+       
+        <label for="idConducteur">Id du conducteur</label>
+        <input type="number" class="form-control" name="id_conducteur" id="idConducteur" aria-describedby="helpId"
+            placeholder="Id du conducteur" required>
+      
+       
+
+        <input type="submit" value="Enregistrer">
+    </div>
+</form>
+</div>
+
+</div>
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

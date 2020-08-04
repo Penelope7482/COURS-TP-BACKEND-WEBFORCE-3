@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bienvenue sur la page du zoo dont l'ID est {{ zoo.id_zoo }}.</h1>
+<ul>
+    <li>Nom du Zoo: {{zoo.name}}</li>
+    <li>Ville du Zoo: {{zoo.city}}</li>
+</ul>
+
+<a href="{{ base_path ~ '/zoo/' ~ zoo.id_zoo ~ '/edit' }}"><input name="" id="" class="btn btn-primary" type="button" value="Mettre la fiche à jour">
+</a>
+
+<a href="{{ base_path ~ '/zoo/' ~ zoo.id_zoo ~ '/delete' }}"><input name="" id="" class="btn btn-primary" type="button" value="Supprimer la fiche">
+</a>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

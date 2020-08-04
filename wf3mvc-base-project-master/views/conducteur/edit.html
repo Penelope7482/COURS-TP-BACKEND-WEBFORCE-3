@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mise à jour du conducteur dont l'id est {{conducteur.id_conducteur}}:</h1>
+
+<form action="{{ base_path ~ '/conducteur/' ~ conducteur.id_conducteur ~ '/edit' }}" method="post"
+    enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" class="form-control" name="prenom" id="prenomUpdate" aria-describedby="helpId"
+            value={{conducteur.prenom}} required>
+
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" name="nom" id="nomUpdate" aria-describedby="helpId"
+            value={{conducteur.nom}} required>
+
+        <!--      <label for="photo"> Télécharger une photo </label>
+        <input type="file" class="form-control-file" name="photo" id="exampleFormControlFile1" value={{animal.photo}}>
+       
+   -->
+        <input type="submit" value="Mettre à jour">
+    </div>
+</form>
+</div>
+
+</div>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %}

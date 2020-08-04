@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Etes vous sûr de vouloir supprimer ce conducteur ?</h1>
+
+
+<a href="{{ base_path ~ '/associationVehiculeConducteur/' ~ associationVehiculeConducteur.id_association ~ '/delete' }}"><input name="" id="" class="btn btn-primary" type="button" value="Supprimer">
+</a>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %}

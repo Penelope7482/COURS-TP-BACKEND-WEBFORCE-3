@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{{ base_path ~ '/associationVehiculeConducteur' }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="id_vehicule">id du vehicule</label>
+        <input type="text" class="form-control" name="id_conducteur" id="id_vehicule" aria-describedby="helpId"
+            placeholder="id du vehicule" required>
+       
+        <label for="id_conducteur">id du conducteur</label>
+        <input type="text" class="form-control" name="id_vehicule" id="id_conducteur aria-describedby="helpId"
+            placeholder="id du conducteur" required>
+        
+
+        <input type="submit" value="Ajouter cette association">
+    </div>
+</form>
+<h1>Liste d'association Véhicule - Conducteur</h1>
+<table>
+    <tr>
+        <td>
+            <div class="alert alert-secondary">
+                id_association
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                conducteur
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                vehicule
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                modification
+            </div>
+        </td>
+        <td>
+            <div class="alert alert-secondary">
+                suppression
+            </div>
+        </td>
+    </tr>
+
+    {% for associationVehiculeConducteur in associationVehiculeConducteurs %}
+<tr>
+    
+        <td>
+            <div class="alert alert-secondary"> {{ associationVehiculeConducteur.id_association }}
+            </div>
+        </td>
+        <td>
+
+            <div class="alert alert-secondary">{{ associationVehiculeConducteur.prenom }} {{associationVehiculeConducteur.nom}} {{associationVehiculeConducteur.id_conducteur}}
+            </div>
+
+        </td>
+        <td>
+            <div class="alert alert-secondary"> {{ associationVehiculeConducteur.marque }} {{associationVehiculeConducteur.modele}} {{associationVehiculeConducteur.id_vehicule}}
+            </div>
+        </td>
+
+
+        
+
+        <td>
+            <a
+                href="{{ base_path ~ '/associationVehiculeConducteur/' ~ associationVehiculeConducteur.id_association ~ '/edit' }}">
+                <input name="" id="" class="btn btn-primary" type="button" value="Modifier l'association'">
+            </a>
+        </td>
+
+        <td>
+            <a
+                href="{{ base_path ~ '/associationVehiculeConducteur/' ~ associationVehiculeConducteur.id_association }}">
+                <input name="" id="" class="btn btn-primary" type="button" value="Supprimer l'association">
+            </a>
+        </td>
+{% endfor %}
+
+    </tr>
+    <hr>
+</table>
+<br>
+<br>
+
+<form action="{{ base_path ~ '/associationVehiculeConducteur' }}" method="post">
+    <div class="form-group">
+
+        <label for="conducteur">Conducteur</label>
+        <select name="conducteur" id="">
+            {% for associationVehiculeConducteur in associationVehiculeConducteurs %}
+            <option>{{associationVehiculeConducteur.prenom}} {{associationVehiculeConducteur.nom}} {{associationVehiculeConducteur.id_conducteur}}</option>
+            {%endfor%}
+        </select>
+
+        <label for="vehicule">Véhicule</label>
+        <select name="vehicule" id="">
+            {% for associationVehiculeConducteur in associationVehiculeConducteurs %}
+            <option> {{ associationVehiculeConducteur.marque }} {{associationVehiculeConducteur.modele}} {{associationVehiculeConducteur.id_vehicule}}</option>
+            {%endfor%}
+        </select>
+
+        <input type="submit" value="Ajouter cette association">
+    </div>
+</form>
+</div>
+
+</div>
+
+
+<a href="{{ base_path ~ '/' }}">
+    <input name="" id="" class="btn btn-primary" type="button" value="Retour à l'accueil">
+</a>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Voici le zoo créé:</h1>
+<ul>
+    <li>Son nom est: {{name}}</li>
+    <li>Il est dans la ville de : {{city}} </li>
+</ul>
+
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+{% endblock %}

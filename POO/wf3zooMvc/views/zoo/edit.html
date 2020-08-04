@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mise à jour de la fiche Zoo dont l'id est {{zoo.id_zoo}}:</h1>
+
+<form action="{{ base_path ~ '/zoo/' ~ zoo.id_zoo ~ '/edit' }}" method="post">
+    <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" class="form-control" name="name" id="nameUpdate" aria-describedby="helpId" value= "{{zoo.name}}">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <label for="city">Ville</label>
+        <input type="text" class="form-control" name="city" id="cityUpdate" aria-describedby="helpId" value={{zoo.city}}>
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <input type="submit" value="Enregistrer">
+    </div>
+</form>
+</div>
+
+</div>
+
+<a href="{{ base_path ~ '/' }}"><input name="" id="" class="btn btn-primary" type="button" value="retour à l'accueil">
+</a>
+
+{% endblock %}
