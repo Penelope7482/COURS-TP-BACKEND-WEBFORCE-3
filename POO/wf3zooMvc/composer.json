@@ -2,7 +2,7 @@
     "require": {
         "bramus/router": "^1.4",
         "symfony/var-dumper": "^5.0",
-        "twig/twig": "3.0"
+        "twig/twig": "3.4.3"
     },
     "autoload": {
         "psr-4": {
